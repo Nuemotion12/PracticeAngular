@@ -1,0 +1,42 @@
+ <!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+</div>
+<ul>
+  <li>
+    Code
+    <input [(ngModel)] = "code">
+    Title
+    <input [(ngModel)] = "title">
+    Did
+    <input [(ngModel)] = "did">
+    Kind
+    <input [(ngModel)] = "kind">
+    <button (click) = "create()">Create</button>
+    <button (click) = "edit()">Edit</button>
+  </li>
+</ul>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col">Title</th>
+        <th scope="col">Did</th>
+        <th scopr="col">Kind</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="collection-item" *ngFor="let film of films">
+        <th scope="row">{{film.code}}</th>
+        <td>{{film.title}}</td>
+        <td>{{film.did}}</td>
+        <td>{{film.kind}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="delete(film.code)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
+<div>AppComponent Footer</div>
